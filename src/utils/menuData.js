@@ -35,11 +35,17 @@ export default {
         },
       ],
     },
-    // {
-    //   resourceKey: 'myProfile',
-    //   icon: '&#xf21c;',
-    //   title: '我的资料',
-    //   url: '/myProfile',
-    // },
+    {
+      resourceKey: 'home',
+      icon: '&#xf21c;',
+      title: '藏宝阁',
+      children: [
+        {
+          resourceKey: 'homePage',
+          title: '首页管理',
+          url: '/homePage',
+        },
+      ],
+    },
   ],
 };

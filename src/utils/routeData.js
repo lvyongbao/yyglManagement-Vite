@@ -20,6 +20,7 @@ const facilitatorRouteList = [
           {
             path: 'lookClient',
             name: '客户信息',
+            back: true,
             models: () => [import('../routes/myClient/lookClientModels')],
             component: () => import('../routes/myClient/lookClient'),
           },
@@ -34,44 +35,58 @@ const facilitatorRouteList = [
     ],
   },
   {
-    path: 'financial',
-    name: '财务管理',
+    path: 'home',
+    name: '藏宝阁',
     children: [
       {
-        path: 'settlement',
-        name: '代结算数据',
-        models: () => [import('../routes/financial/settlement/models')],
-        component: () => import('../routes/financial/settlement/index'),
+        path: 'homePage',
+        name: '首页管理',
+        models: () => [import('../routes/home/homePage/models')],
+        component: () => import('../routes/home/homePage/index'),
+        // children: [
+        //   {
+        //     path: 'addBanner',
+        //     name: '添加图片',
+        //     back: true,
+        //     models: () => [import('../routes/myClient/detailModels')],
+        //     component: () => import('../routes/myClient/detail'),
+        //   },
+        //   {
+        //     path: 'editBanner',
+        //     name: '编辑图片',
+        //     back: true,
+        //     models: () => [import('../routes/myClient/lookClientModels')],
+        //     component: () => import('../routes/myClient/lookClient'),
+        //   },
+        // ]
       },
       {
-        path: 'statements',
-        name: '结算单',
+        path: 'setUser',
+        name: '个人中心',
+        models: () => [import('../routes/myClient/setUserDetail/models')],
+        component: () => import('../routes/myClient/setUserDetail/index'),
+      },
+    ],
+  },
+  {
+    path: 'homepage',
+    name: '首页管理',
+    children: [
+      {
+        path: 'addBanner',
+        name: '添加图片',
+        back: true,
+        models: () => [import('../routes/home/homePage/models')],
+        component: () => import('../routes/home/homePage/index'),
+      },
+      {
+        path: 'editBanner',
+        name: '编辑图片',
         models: () => [import('../routes/financial/statements/models')],
         component: () => import('../routes/financial/statements/index'),
       },
     ],
   },
-  // {
-  //   path: 'myProfile',
-  //   name: '我的资料',
-  //   // back: true,
-  //   models: () => [import('../routes/myProfile/models')],
-  //   component: () => import('../routes/myProfile/index'),
-  //   children: [
-  //     {
-  //       path: 'info',
-  //       name: '基本信息',
-  //       models: () => [import('../routes/myProfile/models')],
-  //       component: () => import('../routes/myProfile/index'),
-  //     },
-  //     {
-  //       path: 'api',
-  //       name: '接口权限',
-  //       models: () => [import('../routes/myProfile/models')],
-  //       component: () => import('../routes/myProfile/index'),
-  //     },
-  //   ],
-  // },
 ];
 
 const routes = [];
